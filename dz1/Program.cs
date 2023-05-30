@@ -93,9 +93,7 @@ namespace dz1
                     cross = "+" + lenghtLeftRightSpace + "+" + lenght_centerSpaсe + "+" + lenghtLeftRightSpace + "+";
                     Console.WriteLine(cross);
                 }
-                // нечёт -----------------------------------------------------------------------------------------
                 
-
                 if (tableSize % 2 == 0 && counter > (tableSize - 2) / 2)
                 {
                     for (int counter2 = (tableSize - 2) / 2; counter2 >= 0; counter2--)
@@ -112,7 +110,7 @@ namespace dz1
 
                 if (tableSize % 2 == 1 && counter < (tableSize - 3) / 2 - 1)
                 {
-                    for (int counter3 = (tableSize - 2) / 2; counter3 >= 0; counter3--)
+                    for (int counter3 = (tableSize - 3) / 2; counter3 >= 0; counter3--)
                     {
                         cross = "+" + lenghtLeftRightSpace + "+" + lenght_centerSpaсe + "+" + lenghtLeftRightSpace + "+";
                         Console.WriteLine(cross);
@@ -123,7 +121,7 @@ namespace dz1
                 }
                 
 
-                else if (tableSize % 2 == 1 && quentityCenterSpase == 1 && counter == (tableSize - 2) / 2 )
+                else if (tableSize % 2 == 1 && quentityCenterSpase == 1 && counter == (tableSize - 3) / 2 )
                 {
                    
                     cross = "+" + lenghtLeftRightSpace + "+" + lenghtLeftRightSpace + "+";
@@ -131,7 +129,7 @@ namespace dz1
                     
 
                 }
-                else if (tableSize % 2 == 1 && counter == (tableSize - 3) / 2-1 )
+                else if (tableSize % 2 == 1 && counter == (tableSize - 3) / 2+1 )
                 {
                    // quentityLeftRightSpace = (tableSize - 3) / 2;
                     cross = "+" + lenghtLeftRightSpace + "+" + lenght_centerSpaсe + "+" + lenghtLeftRightSpace + "+";
@@ -155,18 +153,7 @@ namespace dz1
                     }
                 }
                
-                if (tableSize % 2 == 1 && counter > (tableSize - 3) / 2 )
-                {
-                    
-                    for (int counter4 = (tableSize - 3) / 2; counter4 >= 0; counter4--)
-                    {
-                        cross = "+" + lenghtLeftRightSpace + "+" + lenght_centerSpaсe + "+" + lenghtLeftRightSpace + "+";
-                        Console.WriteLine(cross);
-                        quentityCenterSpase += 2;
-                        quentityLeftRightSpace -= 1;
-                        break;
-                    }
-                }
+               
 
 
             }
