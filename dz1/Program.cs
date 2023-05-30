@@ -155,15 +155,15 @@ namespace dz1
                     }
                 }
                
-                if (wirinaVsego % 2 == 1 && counter > (wirinaVsego - 3) / 2 )
+                if (tableSize % 2 == 1 && counter > (tableSize - 3) / 2 )
                 {
                     
-                    for (int counter4 = (wirinaVsego - 3) / 2; counter4 >= 0; counter4--)
+                    for (int counter4 = (tableSize - 3) / 2; counter4 >= 0; counter4--)
                     {
-                        cross = "+" + lenght_left_rightSpace + "+" + lenght_centerSpaсe + "+" + lenght_left_rightSpace + "+";
+                        cross = "+" + lenghtLeftRightSpace + "+" + lenght_centerSpaсe + "+" + lenghtLeftRightSpace + "+";
                         Console.WriteLine(cross);
                         quentityCenterSpase += 2;
-                        quentityLeft_rightSpace -= 1;
+                        quentityLeftRightSpace -= 1;
                         break;
                     }
                 }
@@ -178,104 +178,6 @@ namespace dz1
 
 
 
-//krestikniz = "+" + poprobelu3 + "+" + poprobelu4 + "+" + poprobelu3 + "+";
-
-//while (poprobelu4.Length == 0)
-//char pomigaika = '+';
-//int skolkoPlusov = krestikverh.Count(f => (f == pomigaika));
-//Console.WriteLine(krestikniz);
-
-
-//if (counter % 2 == 0 && counter == (wirinaVsego) / 2 + 1)
-//{
-//    cross = "+" + lenght_left_rightSpace + "+" + lenght_centerSpaсe + "+" + lenght_left_rightSpace + "+";
-//    Console.WriteLine(cross);
-
-//}
-
-
-
-//if (counter < (wirinaVsego - 2) / 2 - 1)
-//{
-//    cross = "+" + lenght_left_rightSpace + "+" + lenght_centerSpaсe + "+" + lenght_left_rightSpace + "+";
-
-//    Console.WriteLine(cross);
-//    quentityCenterSpase -= 2;
-//    quentityLeft_rightSpace += 1;
-//}
-//if (counter == (wirinaVsego - 2) / 2 && counter % 2 == 1) //vot tut
-//{
-
-
-//    cross = "+" + lenght_left_rightSpace + "+" + lenght_left_rightSpace + "+";
-//    Console.WriteLine(cross);
-
-
-//    //quentityCenterSpase -= 2;
-//    //quentityLeft_rightSpace += 1;
-
-//    // cross = "+" + lenght_left_rightSpace + "+" + lenght_centerSpaсe + "+" + lenght_left_rightSpace + "+";
-
-
-
-
-
-//    // quentityCenterSpase += 2;
-//    // quentityLeft_rightSpace -= 1;
-
-//}
-
-//if (counter % 2 == 0 && counter == (wirinaVsego) / 2 + 1)
-//{
-//    cross = "+" + lenght_left_rightSpace + "+" + lenght_centerSpaсe + "+" + lenght_left_rightSpace + "+";
-//    Console.WriteLine(cross);
-
-//}
-
-//if (counter > (wirinaVsego - 2) / 2 + 1 && quentityLeft_rightSpace >= 0)
-//{
-
-//    cross = "+" + lenght_left_rightSpace + "+" + lenght_centerSpaсe + "+" + lenght_left_rightSpace + "+";
-//    quentityCenterSpase += 2;
-//    quentityLeft_rightSpace -= 1;
-//    Console.WriteLine(cross);
-//}
-
-
-
-
-
-
-
-//string krestik = null;
-//string zamena2 = "+";
-//int positionplus = 1; positionplus++;
-//int plusposition = wirinaVsego - 1; plusposition--;
-//for (int kvo_strok = wirinaVsego; kvo_strok > 0; kvo_strok--)
-//    Console.Write(krestik);
-
-
-//(dubikat_probel2 = 0; dubikat_probel2 < (wirinaVsego / 2); dubikat_probel2--)
-
-// 
-//
-
-
-
-
-
-
-
-//    krestik = ((krestik.Remove(positionPlus, 1).Insert(positionPlus, zamena2.ToString())));
-// Console.WriteLine(granici);
-
-
-
-
-            }
-        }
-    }
-}
 
 
 
