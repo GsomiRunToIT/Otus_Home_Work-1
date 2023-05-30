@@ -1,5 +1,8 @@
 ﻿
 using System;
+using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.Metrics;
+using System.Reflection;
 using System.Text;
 
 namespace dz1
@@ -43,6 +46,7 @@ namespace dz1
             for (int s4et4ik_strok1 = 1; s4et4ik_strok1 < razmerTAbl; s4et4ik_strok1++)
                 Console.WriteLine("+".PadRight(wirinaVsego - 1, ' ') + ('+'));
             Console.WriteLine(granici);
+
             int visota = (razmerTAbl - 1) * 2 + 1;
             for (int plus = 0; plus < visota; plus++)
             {
@@ -60,95 +64,166 @@ namespace dz1
             }
             Console.WriteLine(granici);
 
-            string cross;
+            string cross = null;
             string centerSpaсe;
             string left_rightSpace;
+
             int quentityCenterSpase = wirinaVsego - 4;
             int quentityLeft_rightSpace = 0;
-           
 
-            for (int counter = 0; counter <= wirinaVsego-1; ++counter)
+
+            for (int counter = 0; counter < wirinaVsego - 1; counter++)
             {
                 string lenght_centerSpaсe = new string(' ', quentityCenterSpase);
                 string lenght_left_rightSpace = new string(' ', quentityLeft_rightSpace);
-                if (counter < (wirinaVsego - 2) / 2 - 1)
+                //чёт
+                if (wirinaVsego % 2 == 0 && counter < (wirinaVsego - 2) / 2 - 1)
                 {
-                    cross = "+" + lenght_left_rightSpace + "+" + lenght_centerSpaсe + "+" + lenght_left_rightSpace + "+";
-                      
-                    Console.WriteLine(cross);
-                    quentityCenterSpase -= 2;
-                    quentityLeft_rightSpace += 1;
+                    for (int counter1 = (wirinaVsego - 2) / 2; counter1 >= 0; counter1--)
+                    {
+                        cross = "+" + lenght_left_rightSpace + "+" + lenght_centerSpaсe + "+" + lenght_left_rightSpace + "+";
+                        Console.WriteLine(cross);
+                        quentityCenterSpase -= 2;
+                        quentityLeft_rightSpace += 1;
+                        break;
+                    }
                 }
-                if (counter % 2 == 1 && counter < (wirinaVsego - 2) / 2 +1 && quentityCenterSpase == 3 ) //vot tut
-                {
-                    cross = "+" + lenght_left_rightSpace + "+" + lenght_left_rightSpace + "+";
-                    Console.WriteLine(cross);
-                    quentityCenterSpase += 2;
-                    quentityLeft_rightSpace -= 1;
-                }
-
-                if (counter % 2 == 0 && counter == (wirinaVsego ) / 2 + 1)
+                else if (wirinaVsego % 2 == 0 && quentityCenterSpase == 0 && counter < (wirinaVsego - 2) / 2)
                 {
                     cross = "+" + lenght_left_rightSpace + "+" + lenght_centerSpaсe + "+" + lenght_left_rightSpace + "+";
                     Console.WriteLine(cross);
-                    
                 }
 
-                if (counter > (wirinaVsego-2) / 2+1 && quentityLeft_rightSpace>=0 )
+                if (wirinaVsego % 2 == 0 && counter > (wirinaVsego - 2) / 2)
+                {
+                    for (int counter2 = (wirinaVsego - 2) / 2; counter2 >= 0; counter2--)
+                    {
+                        cross = "+" + lenght_left_rightSpace + "+" + lenght_centerSpaсe + "+" + lenght_left_rightSpace + "+";
+                        Console.WriteLine(cross);
+                        quentityCenterSpase += 2;
+                        quentityLeft_rightSpace -= 1;
+                        break;
+                    }
+                }
+                // нечёт -----------------------------------------------------------------------------------------
+                
+
+                if (wirinaVsego % 2 == 1 && counter < (wirinaVsego - 2) / 2 - 1)
+                {
+                    for (int counter3 = (wirinaVsego - 2) / 2; counter3 >= 0; counter3--)
+                    {
+                        cross = "+" + lenght_left_rightSpace + "+" + lenght_centerSpaсe + "+" + lenght_left_rightSpace + "+";
+                        Console.WriteLine(cross);
+                        quentityCenterSpase -= 2;
+                        quentityLeft_rightSpace += 1;
+                        break;
+                    }
+                }
+
+                else if (wirinaVsego % 2 == 1 && quentityCenterSpase == 1 && counter == (wirinaVsego - 2) / 2 + 1)
                 {
                    
+                    cross = "+" + lenght_left_rightSpace + "+" + lenght_left_rightSpace + "+";
+                    Console.WriteLine(cross);
+                    
+
+                }
+                else if (wirinaVsego % 2 == 1 && (counter == (wirinaVsego - 3) / 2))
+                {
+                   // quentityLeft_rightSpace = (wirinaVsego - 3) / 2;
                     cross = "+" + lenght_left_rightSpace + "+" + lenght_centerSpaсe + "+" + lenght_left_rightSpace + "+";
-                    quentityCenterSpase += 2;
-                    quentityLeft_rightSpace -= 1;
                     Console.WriteLine(cross);
                 }
+                //else if (wirinaVsego % 2 == 1 && counter == (wirinaVsego  - 3 ) / 2 + 1 )
+                //{
+                //  quentityLeft_rightSpace  +=1 ;
+                //}
 
-               
-               
-                //else
-                //    quentityCenterSpase -= 2;
-                //    quentityLeft_rightSpace += 1;
-
+                if (wirinaVsego % 2 == 1 && counter > (wirinaVsego - 3) / 2 )
+                {
+                    
+                    for (int counter4 = (wirinaVsego - 3) / 2; counter4 >= 0; counter4--)
+                    {
+                        cross = "+" + lenght_left_rightSpace + "+" + lenght_centerSpaсe + "+" + lenght_left_rightSpace + "+";
+                        Console.WriteLine(cross);
+                        quentityCenterSpase += 2;
+                        quentityLeft_rightSpace -= 1;
+                        break;
+                    }
+                }
 
 
             }
         }
     }
 }
-            
-
-            
-
-
-            //if (quentityCenterSpase % 2 == 1)
-            //{
-            //    cross = "+" + lenght_left_rightSpace + "+" + lenght_left_rightSpace + "+";
-            //    Console.WriteLine(cross);
-
-            //}
-           
-        
-            
-
-        
-       
-  
-
-
-
- //krestikniz = "+" + poprobelu3 + "+" + poprobelu4 + "+" + poprobelu3 + "+";
-
-            //while (poprobelu4.Length == 0)
-            //char pomigaika = '+';
-            //int skolkoPlusov = krestikverh.Count(f => (f == pomigaika));
-            //Console.WriteLine(krestikniz);
 
 
 
 
 
+//krestikniz = "+" + poprobelu3 + "+" + poprobelu4 + "+" + poprobelu3 + "+";
+
+//while (poprobelu4.Length == 0)
+//char pomigaika = '+';
+//int skolkoPlusov = krestikverh.Count(f => (f == pomigaika));
+//Console.WriteLine(krestikniz);
 
 
+//if (counter % 2 == 0 && counter == (wirinaVsego) / 2 + 1)
+//{
+//    cross = "+" + lenght_left_rightSpace + "+" + lenght_centerSpaсe + "+" + lenght_left_rightSpace + "+";
+//    Console.WriteLine(cross);
+
+//}
+
+
+
+//if (counter < (wirinaVsego - 2) / 2 - 1)
+//{
+//    cross = "+" + lenght_left_rightSpace + "+" + lenght_centerSpaсe + "+" + lenght_left_rightSpace + "+";
+
+//    Console.WriteLine(cross);
+//    quentityCenterSpase -= 2;
+//    quentityLeft_rightSpace += 1;
+//}
+//if (counter == (wirinaVsego - 2) / 2 && counter % 2 == 1) //vot tut
+//{
+
+
+//    cross = "+" + lenght_left_rightSpace + "+" + lenght_left_rightSpace + "+";
+//    Console.WriteLine(cross);
+
+
+//    //quentityCenterSpase -= 2;
+//    //quentityLeft_rightSpace += 1;
+
+//    // cross = "+" + lenght_left_rightSpace + "+" + lenght_centerSpaсe + "+" + lenght_left_rightSpace + "+";
+
+
+
+
+
+//    // quentityCenterSpase += 2;
+//    // quentityLeft_rightSpace -= 1;
+
+//}
+
+//if (counter % 2 == 0 && counter == (wirinaVsego) / 2 + 1)
+//{
+//    cross = "+" + lenght_left_rightSpace + "+" + lenght_centerSpaсe + "+" + lenght_left_rightSpace + "+";
+//    Console.WriteLine(cross);
+
+//}
+
+//if (counter > (wirinaVsego - 2) / 2 + 1 && quentityLeft_rightSpace >= 0)
+//{
+
+//    cross = "+" + lenght_left_rightSpace + "+" + lenght_centerSpaсe + "+" + lenght_left_rightSpace + "+";
+//    quentityCenterSpase += 2;
+//    quentityLeft_rightSpace -= 1;
+//    Console.WriteLine(cross);
+//}
 
 
 
@@ -222,5 +297,60 @@ namespace dz1
 //        quentityCenterSpase += 2;
 //        quentityLeft_rightSpace -= 1;
 //    }
+
+//}
+//if (counter == (wirinaVsego) / 2 + 1 && counter % 2 == 1 && quentityCenterSpase == 1) //vot tut
+//{
+
+
+//    cross = "+" + lenght_left_rightSpace + "+" + lenght_left_rightSpace + "+";
+//    Console.WriteLine(cross);
+
+
+//    quentityCenterSpase -= 2;
+//    quentityLeft_rightSpace += 1;
+
+//    // cross = "+" + lenght_left_rightspace + "+" + lenght_centerspaсe + "+" + lenght_left_rightspace + "+";
+
+
+
+
+
+//    // quentitycenterspase += 2;
+//    // quentityleft_rightspace -= 1;
+
+//}
+
+//else
+//{
+//    cross = "+" + lenght_left_rightSpace + "+" + lenght_centerSpaсe + "+" + lenght_left_rightSpace + "+";
+//    if (counter <= (wirinaVsego - 2) / 2 - 1)
+//    {
+//        quentityCenterSpase -= 2;
+//        quentityLeft_rightSpace += 1;
+
+
+//        Console.WriteLine(cross);
+//    }
+
+//    else if (counter == (wirinaVsego - 2) / 2 - 1 && wirinaVsego % 2 == 1)
+//    {
+//        quentityCenterSpase -= 2;
+//        quentityLeft_rightSpace += 1;
+//    }
+//    if (counter % 2 == 0 && counter == (wirinaVsego) / 2 + 1)
+//    {
+
+//        Console.WriteLine(cross);
+
+//    }
+//    if (counter > (wirinaVsego - 2) / 2 + 1 && quentityLeft_rightSpace >= 0)
+//    {
+//        quentityCenterSpase += 2;
+//        quentityLeft_rightSpace -= 1;
+//        Console.WriteLine(cross);
+//    }
+
+
 
 //}
